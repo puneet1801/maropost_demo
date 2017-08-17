@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get 'home/about_us'
   get 'home/contact_us'
+  post 'home/contact_form'
 end
