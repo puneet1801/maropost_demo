@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:edit, :update, :show, :destroy, :update_name]
 
   def index
-    @galleries = Gallery.order(:name).page params[:page]
+    @galleries = Gallery.order("created_at DESC").page params[:page]
   end
 
   def new
