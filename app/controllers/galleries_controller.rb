@@ -1,8 +1,9 @@
-class GalleriesController < InheritedResources::Base
-  before_filter :set_gallery, only: [:edit, :update, :show, :destroy]
+class GalleriesController < ApplicationController
+	before_action :authenticate_user!
+  before_action :set_gallery, only: [:edit, :update, :show, :destroy]
 
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.order(:name).page params[:page]
   end
 
   def new
@@ -46,7 +47,7 @@ class GalleriesController < InheritedResources::Base
     end
 
     def gallery_params
-      params.require(:gallery).permit(:name, :image)
+      params.require(:gallery).permit(:name,:image)
     end
 end
 

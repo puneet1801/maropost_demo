@@ -4,8 +4,8 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @gallery.image %>
+  <strong>Image:</strong><br>
+  <%= image_tag(@gallery.image.url) unless @gallery.image.url.nil? %>
 </p>
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |

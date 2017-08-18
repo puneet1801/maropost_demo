@@ -16,7 +16,7 @@
       <% @galleries.each do |gallery| %>
         <tr>
           <td><%= gallery.name %></td>
-          <td><%= gallery.image %></td>
+          <td><%= image_tag(gallery.image.url(:thumb)) unless gallery.image.url.nil? %></td>
           <td><%= link_to 'Show', gallery %></td>
           <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
           <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,3 +25,5 @@
     </tbody>
   </table>
 </div>
+
+<%= paginate @galleries %>
