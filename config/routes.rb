@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :galleries
+  resources :galleries do
+  	member do
+  		post :update_name 
+  	end
+  end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

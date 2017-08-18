@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
 	before_action :authenticate_user!
-  before_action :set_gallery, only: [:edit, :update, :show, :destroy]
+  before_action :set_gallery, only: [:edit, :update, :show, :destroy, :update_name]
 
   def index
     @galleries = Gallery.order(:name).page params[:page]
@@ -38,6 +38,14 @@ class GalleriesController < ApplicationController
   def destroy
     @gallery.destroy
     redirect_to galleries_path, notice: "Gallery deleted successfully."
+  end
+
+  def update_name
+  	if @gallery.update_attributes(name: params[:name])
+  		render json: {status: true, message: "Name updated successfully.", color: "green"}
+  	else
+  		render json: {status: false, message: @gallery.errors.messages.to_s, color: "red"}
+  	end
   end
 
   private
