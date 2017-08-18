@@ -4,3 +4,24 @@
   Static version of css will use Glyphicons sprites by default
   =require twitter-bootstrap-static/sprites
 */
+
+.gallery_page h1{
+	float: left
+}
+
+.gallery_page .new_btn{
+	margin: 18px 0 18px 0; 
+	color: white
+}
+
+.about_us_page .panel{
+	padding: 10px
+}
+
+.about_us_page img{
+	width: 100%
+}
+
+body .main_container{
+	margin-top: 50px
+}

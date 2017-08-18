@@ -1,0 +1,27 @@
+<div class="gallery_page">
+  <h1>Galleries</h1>
+
+  <%= link_to 'New Gallery', new_gallery_path, class: "new_btn btn btn-primary pull-right" %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @galleries.each do |gallery| %>
+        <tr>
+          <td><%= gallery.name %></td>
+          <td><%= gallery.image %></td>
+          <td><%= link_to 'Show', gallery %></td>
+          <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+          <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
