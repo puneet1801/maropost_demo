@@ -27,3 +27,11 @@
 </div>
 
 <%= paginate @galleries %>
+
+<hr>
+
+<h3>Import CSV</h3>
+<%= form_tag import_csv_galleries_path, :multipart => true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+<% end %>

@@ -48,6 +48,11 @@ class GalleriesController < ApplicationController
   	end
   end
 
+  def import_csv
+    Gallery.import(params[:file])
+    redirect_to galleries_path, notice: "Gallery data imported."
+  end
+
   private
 
     def set_gallery
