@@ -4,24 +4,3 @@
 
 <%= link_to 'Show', @gallery %> |
 <%= link_to 'Back', galleries_path %>
-
-<script type="text/javascript">
-	$("#gallery_name").change(function(){
-		var src = $("#gallery_name")
-		var name = $(src).val();
-		$.ajax({
-			type: "post",
-			url: "<%= update_name_gallery_path(params[:id]) %>",
-			data: "name="+name,
-			success: function(res){
-				console.log(res);
-				$(src).parent().children().remove(".update_status");
-				$(src).parent().append("<div style='color: "+res.color+"' class='update_status'>"+res.message+"<div>");
-			},error: function(){
-				console.log("Error");
-				alert("Something went wrong.");
-			}
-
-		})
-	})
-</script>

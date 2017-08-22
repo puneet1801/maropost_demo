@@ -11,7 +11,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :gallery_name, required: "true" %>
+    <%= form.text_field :name, id: :gallery_name, required: "true", gallery_id: params[:id] %>
   </div>
 
   <div class="field">
