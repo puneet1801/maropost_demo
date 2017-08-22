@@ -37,6 +37,10 @@ class Api::HomeController < ApplicationController
     end
   end
 
+  def no_route
+    render json: {code: 500, status: "Failure", message: "No route matches"}
+  end
+
   private
 
   def user_params
