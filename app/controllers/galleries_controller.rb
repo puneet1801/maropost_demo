@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-	before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_gallery, only: [:edit, :update, :show, :destroy, :update_name]
 
   def index
@@ -55,12 +55,12 @@ class GalleriesController < ApplicationController
 
   private
 
-    def set_gallery
-      @gallery = Gallery.find(params[:id])
-    end
+  def set_gallery
+    @gallery = Gallery.find(params[:id])
+  end
 
-    def gallery_params
-      params.require(:gallery).permit(:name,:image)
-    end
+  def gallery_params
+    params.require(:gallery).permit(:name,:image)
+  end
 end
 

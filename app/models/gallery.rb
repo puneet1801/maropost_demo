@@ -6,10 +6,10 @@ class Gallery < ApplicationRecord
 
   def self.import(file)
   	CSV.foreach(file.path, headers: true) do |row|
-  		g = Gallery.new 
-  		g.name = row.to_hash["name"]
-  		g.remote_image_url = row.to_hash["image"]
-  		g.save
+      g = Gallery.new 
+      g.name = row.to_hash["name"]
+      g.remote_image_url = row.to_hash["image"]
+      g.save
   	end
   end
 end
