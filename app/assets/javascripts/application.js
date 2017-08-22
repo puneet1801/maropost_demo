@@ -14,3 +14,4 @@
 //= require turbolinks
 //= require_tree .
 //= require galleries
+//= require custom
