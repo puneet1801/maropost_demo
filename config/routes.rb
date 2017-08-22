@@ -15,14 +15,14 @@ Rails.application.routes.draw do
 
   root to: 'home#about_us'
 
-  get 'home/about_us'
-  get 'home/contact_us'
+  get  'home/about_us'
+  get  'home/contact_us'
   post 'home/contact_form'
 
   namespace :api, defaults: {format: 'json'} do
-    post 'create_user' => 'home#create_user'
+    post 'create_user'    => 'home#create_user'
     post 'create_gallery' => 'home#create_gallery'
-    post 'contact_form' => 'home#contact_form'
-    get 'gallery/:id' => 'home#get_gallery'
+    post 'contact_form'   => 'home#contact_form'
+    get  'gallery/:id'    => 'home#get_gallery'
   end
 end
