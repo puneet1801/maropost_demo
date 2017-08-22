@@ -49,8 +49,12 @@ class GalleriesController < ApplicationController
   end
 
   def import_csv
-    Gallery.import(params[:file])
-    redirect_to galleries_path, notice: "Gallery data imported."
+    if params[:file].blank?
+      redirect_to galleries_path, alert: "No File to import"
+    else
+      data = Gallery.import(params[:file])
+      redirect_to galleries_path, notice: data
+    end
   end
 
   private
