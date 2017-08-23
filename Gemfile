@@ -49,6 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
+  gem 'letter_opener_web'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -59,3 +60,4 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'kaminari'
+gem 'sidekiq'
