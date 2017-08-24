@@ -57,6 +57,10 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def images_count
+    render json: {status: true, count: Gallery.all.count}
+  end
+
   private
 
   def set_gallery

@@ -1,3 +1,4 @@
+<center><div class="images_count">Images Count:<span id="count"></span></div></center>
 <div class="gallery_page">
   <h1>Galleries</h1>
 
@@ -36,4 +37,10 @@
 <%= form_tag import_csv_galleries_path, :multipart => true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import CSV" %>
+<% end %>
+
+<% content_for :custom_js do %>
+  <script type="text/javascript">
+    setInterval(fetch_images_count, 5000);
+  </script>
 <% end %>

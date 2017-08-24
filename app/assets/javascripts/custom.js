@@ -9,3 +9,16 @@ function match_password(input){
     $("#user_password_confirmation")[0].setCustomValidity('');
   }
 }
+
+function fetch_images_count() {
+	$(".images_count").addClass("bg_yellow");
+	$.ajax({
+		url: "/galleries/images_count",
+		success: function(res){
+			$(".images_count #count").html(res.count);
+			$(".images_count").removeClass("bg_yellow").addClass("bg_green");
+		},error: function(){
+			console.log("error");
+		}
+	})
+}

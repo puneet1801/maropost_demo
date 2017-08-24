@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   resources :galleries do
   	member do
-  		post :update_name   
+  		post :update_name
   	end
     collection do
       post :import_csv
+      get :images_count
     end
   end
 
