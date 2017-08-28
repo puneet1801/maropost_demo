@@ -48,3 +48,11 @@ body .main_container{
 	padding: 10px;
 	border-radius: 5px;
 }
+
+.navbar-bottom{
+	margin-top: 15px;
+}
+
+.navbar-bottom .text-muted{
+	margin-top: 14px;
+}
