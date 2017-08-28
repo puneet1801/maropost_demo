@@ -15,3 +15,4 @@
 //= require_tree .
 //= require galleries
 //= require custom
+//= require twitter/bootstrap
